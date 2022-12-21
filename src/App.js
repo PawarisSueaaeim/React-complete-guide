@@ -1,5 +1,7 @@
 import React from 'react';
-import Expense from "./components/Expense";
+import Expense from "./components/Expenses/Expense";
+
+import NewExpenses from './components/NewExpenses/NewExpenses';
 
 function App() {
 
@@ -29,9 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>
-        This is home page
-      </h2>
+        <NewExpenses/>
         <Expense expense={expense}/>
     </div>
   );
