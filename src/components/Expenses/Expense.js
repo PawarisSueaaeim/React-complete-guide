@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Expense.css";
 import ExpenseItem from "./Expenseltem";
 import Card from "../UI/Card";
-import ExpensesFilter from "../Filter/ExpensesFilter";
+import ExpensesFilter from "./ExpensesFilter";
 
 function Expense(props) {
 
@@ -10,7 +10,6 @@ function Expense(props) {
 
     const filterHandlerChange = (selectedYear) => {
         setThisYear(selectedYear);
-        console.log(selectedYear);
     };
 
   return (
