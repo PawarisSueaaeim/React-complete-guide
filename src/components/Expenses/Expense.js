@@ -18,18 +18,25 @@ function Expense(props) {
       )
     })
 
+    let expenseContent = <p>not found product</p>
+    
+    if(filteredExpense.length > 0) {
+      expenseContent = filteredExpense.map((expense, index) => {
+      return (
+        <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        price={expense.price}
+        date={expense.date}
+        />
+      )
+    })}
+
   return (
     <div>
       <Card className="container">
-      <ExpensesFilter onChangeFilter={filterHandlerChange} yearValue={thisYear}/>
-      {filteredExpense.map((expense, index) => {
-        return (<ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          price={expense.price}
-          date={expense.date}
-          />)
-      })}
+        <ExpensesFilter onChangeFilter={filterHandlerChange} yearValue={thisYear}/>
+        {expenseContent}
       </Card>
     </div>
   );
