@@ -13,17 +13,17 @@ const DUMMY_EXPENSE = [
     id: "1",
     title: "pen",
     price: "1",
-    date: new Date(2023, 1,8),
+    date: new Date(2020, 1,8),
   },{
     id: "2",
     title: "water",
     price: "10",
-    date: new Date(2023, 3, 28),
+    date: new Date(2022, 3, 28),
   },{
     id: "3",
     title: "phone",
     price: "100",
-    date: new Date(2023, 8, 18),
+    date: new Date(2021, 8, 18),
   },
 ];
 
