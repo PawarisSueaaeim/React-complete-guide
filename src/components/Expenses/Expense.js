@@ -1,8 +1,9 @@
 import React from "react";
 import "./Expense.css";
-import ExpenseItem from "./Expenseltem";
+// import ExpenseItem from "./Expenseltem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpenseList from "./ExpenseList";
 
 function Expense(props) {
 
@@ -18,25 +19,11 @@ function Expense(props) {
       )
     })
 
-    let expenseContent = <p>not found product</p>
-    
-    if(filteredExpense.length > 0) {
-      expenseContent = filteredExpense.map((expense, index) => {
-      return (
-        <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        price={expense.price}
-        date={expense.date}
-        />
-      )
-    })}
-
   return (
     <div>
       <Card className="container">
         <ExpensesFilter onChangeFilter={filterHandlerChange} yearValue={thisYear}/>
-        {expenseContent}
+        <ExpenseList items={filteredExpense}/>
       </Card>
     </div>
   );
