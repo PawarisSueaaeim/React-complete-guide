@@ -5,13 +5,14 @@ import './ExpenseList.css';
 const ExpenseList = (props) => {
 
     if (props.items.length === 0){
-       return ( 
-       <h2 className="expenses-list__fallback">Not found product</h2>
-       )
+       return <h2 className="expenses-list__fallback">Not found product</h2>
+    }else{
+        return <h2 className="expenses-list__fallback">Not found product</h2>
     }
 
-    return (
-    <ul className="expenses-list">
+    return 
+    <div>
+ <ul className="expenses-list">
        {props.items.map((expense, index) => {
         return (
             <Expense 
@@ -23,7 +24,9 @@ const ExpenseList = (props) => {
         )
        })}
     </ul>
-    )
+    </div>
+   
+    
 };
 
 export default ExpenseList;
