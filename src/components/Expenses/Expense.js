@@ -13,7 +13,9 @@ function Expense(props) {
     };
 
     const filteredExpense = props.items.filter((expense) => {
-      return expense.date.getFullYear().toString() === thisYear
+      return (
+        expense.date.getFullYear().toString() === thisYear
+      )
     });
 
   return (
@@ -21,6 +23,7 @@ function Expense(props) {
       <Card className="container">
         <ExpensesFilter onChangeFilter={filterHandlerChange} yearValue={thisYear}/>
         <ExpenseList items={filteredExpense}/>
+        {/* {console.log('this is after sent',filteredExpense)} */}
       </Card>
     </div>
   );
