@@ -12,19 +12,19 @@ function Expense(props) {
         setThisYear(selectedYear);
     };
 
-    const filteredExpense = props.items.filter((expense) => {
-      return (
+    const filteredExpense = props.items.filter((expense) => 
+      (
         expense.date.getFullYear().toString() === thisYear
       )
-    });
+    );
 
   return (
     <div>
       <Card className="container">
         <ExpensesFilter onChangeFilter={filterHandlerChange} yearValue={thisYear}/>
         <ExpenseList items={filteredExpense}/>
-        {/* {console.log('this is after sent',filteredExpense)} */}
       </Card>
+      
     </div>
   );
 }

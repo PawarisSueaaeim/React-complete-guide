@@ -1,16 +1,18 @@
 import React from "react";
-import Expense from "./Expense";
+import ExpenseItem from './Expenseltem';
 import "./ExpenseList.css";
 
 const ExpenseList = (props) => {
+  const items = props.items || [];
+  console.log(items)
 
   if (props.items.length === 0) {
     return <h2 className="expenses-list__fallback">No products found for this date range.</h2>;
   }
   return (
     <ul className="expenses-list">
-      {props.items.map((expense, index) => (
-        <Expense
+      {items.map((expense, index) => (
+        <ExpenseItem
           key={`${expense.id}-${index}`}
           title={expense.title}
           price={expense.price}
