@@ -6,13 +6,10 @@ const ChartBar = (props) => {
 
     let setFillHight = '0%';
 
-    
     if (props.maxValue > 0 ) {
-        console.log(props.maxValue, 'this is the maximum value');
         setFillHight = Math.round((props.value / props.maxValue) * 100) + '%';
     }
 
-    console.log(setFillHight, 'this is setfillHight');
 
     return (
         <div className="chart-bar">
